@@ -6,12 +6,6 @@ import '../styles/repositories.scss'
 
 // https://api.github.com/users/Alexssmusica/repos
 
-const repository = {
-	name: "Unform",
-	description: "Forms in React",
-	link: "https://google.com"
-}
-
 export function RepositoryList() {
 
 	const [repositories, setRepositories] = useState([]);
@@ -30,18 +24,9 @@ export function RepositoryList() {
 		<h1>Lista de Repositórios</h1>
 
 		<ul>
-			<RepositoryItem
-				repository={repository}
-			/>
-			<RepositoryItem
-				repository={repository}
-			/>
-			<RepositoryItem
-				repository={repository}
-			/>
-			<RepositoryItem
-				repository={repository}
-			/>
+			{repositories.map(repository => {
+				return <RepositoryItem key={repository.id} repository={repository} />
+			})}
 		</ul>
 	</section>
   );
