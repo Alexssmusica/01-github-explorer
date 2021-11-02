@@ -17,8 +17,6 @@ export function RepositoryList() {
 			.catch(error => console.error(error))
 	}, [])
 
-	console.log(repositories)
-
   return (
 	<section className="repository-list">
 		<h1>Lista de Repositórios</h1>
